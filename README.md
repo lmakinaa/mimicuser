@@ -1,7 +1,11 @@
 # Synthetic Customer Research Platform
 
-Put a product in front of **AI customers** drawn from a target audience and get back
-evidence-based product feedback — before involving real customers.
+Put your product in front of **AI customers** drawn from your target audience and get
+back evidence-based feedback in minutes — before you involve real customers.
+
+Each synthetic customer opens your real website in a real browser, decides what someone
+like them would want, tries to get it, and narrates what they experienced. A separate
+evaluator then turns that recorded session into structured, evidence-cited findings.
 
 The question this answers is *"what would someone in my target audience experience,
 think, struggle with, and do when they encounter my product?"* — **not** *"does this
@@ -15,6 +19,33 @@ Task completed: YES
 "Pricing felt difficult to understand."
 "I would probably try an alternative before committing."
 ```
+
+---
+
+## Why it matters — business impact
+
+Product teams make expensive decisions on thin evidence. Real user research is slow
+(weeks to recruit and schedule), costly, and usually happens *after* the thing is built.
+This platform moves a first round of customer-perspective evidence to the start of the
+cycle.
+
+| Problem today | What this changes | Impact |
+|---|---|---|
+| User research takes weeks to recruit, schedule and synthesise | A study runs in minutes, on demand, per release or per landing-page change | Faster iteration; research stops being a bottleneck |
+| Research budget limits how often teams test | Marginal cost of one more "customer" is near zero | Test every launch, not just the big ones |
+| Teams discover confusing pricing, onboarding or positioning *after* launch, via churn | Surface it pre-launch, from the audience's point of view | Fewer failed launches, higher activation and conversion |
+| Feedback is anecdotal — one loud opinion drives the roadmap | Studies report only what **multiple** customers hit, with counts per segment | Prioritise by evidence, not by the loudest voice |
+| Synthetic output is hard to trust | Every observed claim cites a recorded event; speculation is labelled as such | Findings a PM can defend in a review |
+| Funnels pass QA yet still lose people | Catches "task completed but I'd still leave" failures that functional tests cannot | Finds the conversion loss that dashboards only show as a number |
+
+**Who uses it:** product managers validating a feature or pricing page, founders
+sanity-checking positioning before spending on acquisition, designers and growth teams
+comparing audiences, and agencies auditing client sites.
+
+**What it is not:** a replacement for talking to real customers. It is a fast, cheap
+first pass that tells you *where to point* real research, and catches the obvious
+problems before real people have to. Calibrating synthetic output against real customer
+behaviour is on the roadmap.
 
 ---
 
@@ -90,6 +121,8 @@ as fact.
 
 ## Running it
 
+**Prerequisites:** Docker (for Postgres + Redis), Python 3.12+, [uv](https://docs.astral.sh/uv/), Node 20+, and either a Claude subscription or an API key (an OpenAI key also works via `LLM_PROVIDER=openai`).
+
 ```bash
 # infrastructure
 docker compose up -d                    # postgres:16 on 5433, redis:7 on 6380
@@ -147,6 +180,15 @@ changes nothing above the storage layer.
 
 ---
 
+## Demo script (≈5 minutes)
+
+1. Open `http://localhost:3000/settings` → **Connect Claude**.
+2. **Studies** tab → enter a product URL and two audiences (e.g. *Freelance designers*, *Startup founders*), 2–3 customers each.
+3. Watch runs execute live; open a run to replay its transcript and screenshots.
+4. Read the study report: ranked findings, `N of M customers` agreement, per-segment breakdown.
+
+---
+
 ## Tests
 
 ```bash
@@ -162,7 +204,7 @@ storage-key safety, engine resolution, and the OAuth state codec.
 
 ## Deliberately not built
 
-Second engine adapter, calibration against real customer behaviour, validity
+Calibration against real customer behaviour, validity
 hardening (bot walls, client-render races), persona variation within a segment,
 billing, teams, permissions, vector search, S3, Kubernetes.
 
