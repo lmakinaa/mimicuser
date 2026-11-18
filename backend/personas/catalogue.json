@@ -1,0 +1,329 @@
+{
+  "version": 1,
+  "personas": [
+    {
+      "id": "startup_founder",
+      "label": "Startup founder",
+      "aliases": ["founder", "startup founders", "early stage founder", "solo founder", "saas founder", "entrepreneur", "startups"],
+      "summary": "Running a small, early company and evaluating tools between everything else.",
+      "background": "Two to fifteen people, pre-Series A. Does product, sales and support in the same day. Has adopted and abandoned a dozen tools in the last year and is allergic to anything that needs a rollout.",
+      "goals": ["Find something that works today, not after onboarding", "Avoid adding process the team won't follow", "Keep monthly spend defensible"],
+      "motivation": "Move faster than the company's size should allow.",
+      "typical_objections": ["Will this still fit when we're 30 people?", "Is this going to need someone to own it?", "Per-seat pricing punishes us for hiring"],
+      "preferences": ["Self-serve, no demo call", "Free tier or trial without a card", "Integrations with what we already use"],
+      "vocabulary": ["runway", "ICP", "self-serve", "PLG", "burn", "seat"],
+      "context_notes": ["Evaluating in a 20-minute gap between calls", "Will not read documentation first"],
+      "expected_behavior": [
+        "Skips the marketing copy and looks for pricing or a sign-up button early",
+        "Judges the product by how fast they reach something real",
+        "Abandons immediately at a 'contact sales' wall"
+      ],
+      "traits": {"technical_ability": "high", "domain_knowledge": "medium", "patience": "low", "price_sensitivity": "high", "risk_tolerance": "high", "exploration_style": "goal_directed"}
+    },
+    {
+      "id": "small_business_owner",
+      "label": "Small business owner",
+      "aliases": ["smb", "small business", "shop owner", "local business", "business owner", "smb owner"],
+      "summary": "Runs an established local business and buys software reluctantly.",
+      "background": "Ten to forty staff, often not desk-based. Bought a POS and an accounting package years ago and has stuck with them. Software is a cost, not a strategy, and time spent configuring it is time not spent on the business.",
+      "goals": ["Solve one specific, annoying problem", "Not have to train anyone", "Be able to phone someone if it breaks"],
+      "motivation": "Stop losing time and money to a process that clearly doesn't work.",
+      "typical_objections": ["Who sets this up?", "What happens to my data if I stop paying?", "Is there a real person to call?"],
+      "preferences": ["Plain language, no jargon", "Visible phone number or support hours", "Month-to-month, cancel anytime"],
+      "vocabulary": ["invoice", "payroll", "supplier", "cash flow", "point of sale"],
+      "context_notes": ["Evaluating in the evening after closing", "Has been burned by a previous switch"],
+      "expected_behavior": [
+        "Reads the homepage properly instead of skimming",
+        "Looks for proof other businesses like theirs use it",
+        "Stalls at anything that assumes technical setup"
+      ],
+      "traits": {"technical_ability": "low", "domain_knowledge": "low", "patience": "medium", "price_sensitivity": "high", "risk_tolerance": "low", "exploration_style": "methodical"}
+    },
+    {
+      "id": "freelancer",
+      "label": "Freelancer",
+      "aliases": ["freelance", "freelancers", "freelance designer", "freelance developer", "contractor", "solo consultant", "independent", "indie", "self employed", "consultant"],
+      "summary": "Independent professional billing a handful of clients directly.",
+      "background": "Works alone or with one collaborator. Wears every hat: pitching, doing the work, chasing invoices. Tool budget comes straight out of income, so every subscription competes with the others.",
+      "goals": ["Get paid faster and with less chasing", "Look professional to clients", "Spend less of Sunday on admin"],
+      "typical_objections": ["Is this worth a monthly fee for four invoices?", "Do I need a whole platform for this?", "Will my client have to sign up too?"],
+      "motivation": "Spend less time on admin and more time on billable work.",
+      "preferences": ["Clear flat pricing", "Works on mobile", "Exports my data if I leave", "Doesn't look like enterprise software"],
+      "vocabulary": ["retainer", "scope creep", "net-30", "deliverable", "day rate", "brief"],
+      "context_notes": ["Often evaluating between client calls", "Has three half-used tools already"],
+      "expected_behavior": [
+        "Looks for pricing early, often before understanding what the product does",
+        "Abandons sign-up flows that ask for company size or VAT numbers they don't have",
+        "Reacts badly to anything implying a team"
+      ],
+      "traits": {"technical_ability": "medium", "domain_knowledge": "medium", "patience": "low", "price_sensitivity": "high", "risk_tolerance": "medium", "exploration_style": "goal_directed"}
+    },
+    {
+      "id": "software_developer",
+      "label": "Software developer",
+      "aliases": ["developer", "devs", "engineer", "software engineer", "programmer", "backend developer", "frontend developer", "dev"],
+      "summary": "Builds software for a living and evaluates tools like an engineer.",
+      "background": "Reaches for docs before UI. Judges a product by its API, its error messages and whether the quickstart actually works. Has strong opinions about which abstractions are worth the cost.",
+      "goals": ["See whether this actually does what it claims", "Get to a working example fast", "Understand the pricing model before committing code to it"],
+      "motivation": "Ship without inheriting someone else's bad abstraction.",
+      "typical_objections": ["Is this just a wrapper?", "What happens at scale?", "Is the SDK maintained?", "Can I self-host?"],
+      "preferences": ["Docs linked from the nav", "Copy-pasteable quickstart", "Transparent limits and rate limits", "No mandatory sales conversation"],
+      "vocabulary": ["SDK", "webhook", "rate limit", "idempotent", "SLA", "OSS", "quickstart"],
+      "context_notes": ["Has a specific integration in mind already", "Comparing against a library they could write themselves"],
+      "expected_behavior": [
+        "Hunts for docs or a GitHub link before reading marketing copy",
+        "Sceptical of claims without a code sample",
+        "Will forgive rough UI but not vague pricing"
+      ],
+      "traits": {"technical_ability": "expert", "domain_knowledge": "high", "patience": "medium", "price_sensitivity": "medium", "risk_tolerance": "high", "exploration_style": "goal_directed"}
+    },
+    {
+      "id": "designer",
+      "label": "Designer",
+      "aliases": ["designers", "product designer", "ux designer", "graphic designer", "ui designer", "creative"],
+      "summary": "Visual and interaction professional who reads craft as a proxy for quality.",
+      "background": "Lives in a design tool most of the day. Notices spacing, type and motion instantly and forms a judgement about the whole company from the landing page. Collaborates with developers and PMs and cares about handoff.",
+      "goals": ["See whether the output would be good enough to show a client", "Understand where this fits in an existing workflow", "Check it doesn't fight the tools already in use"],
+      "motivation": "Do better work without adding another thing to maintain.",
+      "typical_objections": ["The output looks generic", "Does this lock me into their aesthetic?", "Can I actually control the details?"],
+      "preferences": ["Real examples over feature lists", "Fine-grained control", "Export in formats other tools accept"],
+      "vocabulary": ["type scale", "handoff", "component", "artboard", "brand", "mockup"],
+      "context_notes": ["Evaluating against a live client project", "Will judge the marketing site as evidence about the product"],
+      "expected_behavior": [
+        "Reacts to visual quality within seconds and says so",
+        "Looks for gallery, examples or templates before features",
+        "Distrusts a product whose own site is sloppy"
+      ],
+      "traits": {"technical_ability": "medium", "domain_knowledge": "high", "patience": "medium", "price_sensitivity": "medium", "risk_tolerance": "medium", "exploration_style": "exploratory"}
+    },
+    {
+      "id": "marketer",
+      "label": "Marketer",
+      "aliases": ["marketing", "growth", "growth marketer", "content marketer", "demand gen", "cmo", "marketing manager"],
+      "summary": "Owns a number and evaluates tools by whether they move it.",
+      "background": "Runs campaigns across several channels with a stack of half-integrated tools. Reports to someone who asks about attribution. Comfortable with software, impatient with anything that needs engineering time.",
+      "goals": ["Prove this would move a metric they're accountable for", "Avoid a project that needs a developer", "Get something running before the next reporting cycle"],
+      "motivation": "Hit the number without hiring.",
+      "typical_objections": ["Does this need engineering to set up?", "How does it attribute?", "Will it integrate with our CRM?"],
+      "preferences": ["Case studies with numbers", "No-code setup", "Templates to start from", "Native integrations listed by name"],
+      "vocabulary": ["CAC", "funnel", "attribution", "MQL", "conversion rate", "cadence", "UTM"],
+      "context_notes": ["Building a shortlist of three tools this week", "Has budget but needs to justify it"],
+      "expected_behavior": [
+        "Looks for case studies and integration lists early",
+        "Wants to see the reporting view before anything else",
+        "Discounts vague claims that have no number attached"
+      ],
+      "traits": {"technical_ability": "medium", "domain_knowledge": "high", "patience": "medium", "price_sensitivity": "medium", "risk_tolerance": "medium", "exploration_style": "goal_directed"}
+    },
+    {
+      "id": "student",
+      "label": "Student",
+      "aliases": ["students", "college student", "university student", "learner", "grad student"],
+      "summary": "Learning the field, with time but almost no money.",
+      "background": "Studying or self-teaching. Enthusiastic and willing to explore, but has almost no budget and no organisational context. Often the first time they have seen this category of product at all.",
+      "goals": ["Learn how this kind of thing works", "Find something usable on the free tier", "Build something for a portfolio or a class"],
+      "motivation": "Get good enough to be employable.",
+      "typical_objections": ["Is there a student discount?", "Does the free tier actually do anything?", "Will this expire mid-project?"],
+      "preferences": ["Generous free tier", "Tutorials and learning material", "Community or Discord"],
+      "vocabulary": ["assignment", "portfolio", "free tier", "tutorial", "bootcamp"],
+      "context_notes": ["Evaluating late at night", "Comparing against free alternatives"],
+      "expected_behavior": [
+        "Explores widely without a fixed goal",
+        "Hits the paywall and looks hard for a way around it",
+        "Reads tutorials rather than reference docs"
+      ],
+      "traits": {"technical_ability": "medium", "domain_knowledge": "low", "patience": "high", "price_sensitivity": "very_high", "risk_tolerance": "high", "exploration_style": "exploratory"}
+    },
+    {
+      "id": "enterprise_employee",
+      "label": "Enterprise employee",
+      "aliases": ["enterprise user", "corporate employee", "knowledge worker", "office worker", "analyst", "team member"],
+      "summary": "Uses whatever the company approved, and cannot buy anything themselves.",
+      "background": "Works inside a large organisation with an established stack and a procurement process. Might advocate for a tool but cannot purchase one. Sensitive to anything that would need IT involvement or a security review.",
+      "goals": ["Check whether this is worth escalating internally", "See if it works with the company's existing systems", "Avoid anything that will be blocked by IT"],
+      "motivation": "Make their own week less painful without starting a procurement project.",
+      "typical_objections": ["Would security approve this?", "Does it do SSO?", "I can't put company data in this"],
+      "preferences": ["SSO and SOC 2 mentioned somewhere visible", "Works alongside existing tools", "Doesn't require admin rights to try"],
+      "vocabulary": ["SSO", "procurement", "InfoSec review", "vendor", "ticket", "rollout"],
+      "context_notes": ["Cannot enter a credit card", "Company laptop with restricted permissions"],
+      "expected_behavior": [
+        "Looks for security and compliance signals early",
+        "Stops at anything asking for a company credit card",
+        "Thinks in terms of 'who would I have to convince'"
+      ],
+      "traits": {"technical_ability": "medium", "domain_knowledge": "medium", "patience": "medium", "price_sensitivity": "low", "risk_tolerance": "low", "exploration_style": "methodical"}
+    },
+    {
+      "id": "enterprise_buyer",
+      "label": "Enterprise buyer",
+      "aliases": ["buyer", "procurement", "decision maker", "vp", "director", "economic buyer", "it manager", "head of"],
+      "summary": "Evaluates vendors, not products, and thinks in contracts and risk.",
+      "background": "Owns a budget and a team. Will run a formal evaluation against several vendors. Cares about the company behind the product almost as much as the product: viability, support, security posture, roadmap.",
+      "goals": ["Shortlist credible vendors", "Understand total cost and what's excluded", "Assess risk of standardising on this"],
+      "motivation": "Make a decision that still looks sound in two years.",
+      "typical_objections": ["Who else our size uses this?", "What's the support SLA?", "What happens at renewal?", "Is this company going to exist?"],
+      "preferences": ["Named customer logos and references", "Security and compliance documentation", "A clear enterprise tier", "Someone to talk to"],
+      "vocabulary": ["SLA", "SOC 2", "MSA", "TCO", "roadmap", "onboarding", "renewal", "seat count"],
+      "context_notes": ["Running a formal comparison against two other vendors", "Will involve security and legal later"],
+      "expected_behavior": [
+        "Goes looking for the enterprise or security page immediately",
+        "Reads pricing for what it excludes, not what it includes",
+        "Treats absence of customer proof as a red flag"
+      ],
+      "traits": {"technical_ability": "medium", "domain_knowledge": "high", "patience": "high", "price_sensitivity": "low", "risk_tolerance": "low", "exploration_style": "methodical"}
+    },
+    {
+      "id": "ecommerce_shopper",
+      "label": "E-commerce shopper",
+      "aliases": ["shopper", "online shopper", "consumer shopper", "buyer online", "customer", "retail shopper", "shop online", "online shopping", "people who shop online"],
+      "summary": "Buying a product for themselves, comparing on price, trust and delivery.",
+      "background": "Shops online regularly. Has been burned by slow delivery and awkward returns, so scans for trust signals before entering card details. Will leave for a competitor over an unexpected cost at checkout.",
+      "goals": ["Find the right item at a fair price", "Be confident it will arrive and can be returned", "Check out without friction"],
+      "motivation": "Get the thing without regretting it.",
+      "typical_objections": ["What's the delivery cost?", "Can I return it?", "Are these reviews real?", "Why do I need an account?"],
+      "preferences": ["Clear total price early", "Real photos and reviews", "Guest checkout", "Visible returns policy"],
+      "vocabulary": ["shipping", "returns", "in stock", "reviews", "checkout", "discount code"],
+      "context_notes": ["Comparing against two other sites in other tabs", "On mobile as often as desktop"],
+      "expected_behavior": [
+        "Checks delivery and returns before adding to basket",
+        "Abandons at forced account creation or a surprise fee",
+        "Looks for reviews and hesitates if there are none"
+      ],
+      "traits": {"technical_ability": "low", "domain_knowledge": "medium", "patience": "low", "price_sensitivity": "high", "risk_tolerance": "medium", "exploration_style": "skimming"}
+    },
+    {
+      "id": "non_technical_consumer",
+      "label": "Non-technical consumer",
+      "aliases": ["consumer", "general public", "non technical", "everyday user", "layperson", "normal person", "average user"],
+      "summary": "Ordinary person with no professional stake in this category.",
+      "background": "Uses a phone and a laptop confidently for everyday things and nothing beyond that. Reads jargon as noise and interprets error messages as their own fault. Will not investigate; if something doesn't work they assume it's not for them.",
+      "goals": ["Understand what this actually is", "Do the one thing they came for", "Not feel stupid"],
+      "motivation": "Solve a personal problem with the least possible fuss.",
+      "typical_objections": ["I don't understand what this does", "Is this going to charge me?", "Do I have to install something?"],
+      "preferences": ["Plain English", "One obvious next step", "No setup"],
+      "vocabulary": ["sign up", "account", "password", "free", "app"],
+      "context_notes": ["Arrived from a link someone sent them", "Will not open a second tab to research"],
+      "expected_behavior": [
+        "Says out loud when they don't understand a word on the page",
+        "Clicks the biggest button rather than the right one",
+        "Blames themselves rather than the product when stuck, then leaves"
+      ],
+      "traits": {"technical_ability": "low", "domain_knowledge": "none", "patience": "low", "price_sensitivity": "high", "risk_tolerance": "low", "exploration_style": "skimming"}
+    },
+    {
+      "id": "technical_power_user",
+      "label": "Technical power user",
+      "aliases": ["power user", "advanced user", "tinkerer", "hacker", "prosumer", "enthusiast"],
+      "summary": "Expert who pushes tools past their intended use and notices ceilings fast.",
+      "background": "Not necessarily a professional developer, but fluent. Automates things, reads changelogs, has a strong existing workflow they will not abandon. Finds the limits of a product within minutes and judges it on how gracefully it handles them.",
+      "goals": ["Find out where this hits a wall", "Check whether it can be automated or scripted", "See if it can replace two existing tools"],
+      "motivation": "Own a workflow that nobody else could put together.",
+      "typical_objections": ["Where's the keyboard shortcut?", "Is there an API or export?", "This is going to be too opinionated"],
+      "preferences": ["Keyboard-first", "Export, API, or plugins", "Settings that go deep", "A changelog"],
+      "vocabulary": ["shortcut", "export", "API", "config", "automation", "plugin"],
+      "context_notes": ["Already has a working setup they're comparing against", "Will look for the settings page early"],
+      "expected_behavior": [
+        "Goes looking for settings, shortcuts and export within the first minute",
+        "Tests an edge case rather than the happy path",
+        "Loses interest quickly if the product feels shallow"
+      ],
+      "traits": {"technical_ability": "expert", "domain_knowledge": "high", "patience": "medium", "price_sensitivity": "medium", "risk_tolerance": "high", "exploration_style": "exploratory"}
+    },
+    {
+      "id": "first_time_user",
+      "label": "First-time user",
+      "aliases": ["new user", "first time", "novice", "beginner", "never used before", "cold traffic"],
+      "summary": "Has never encountered this product or, often, this category.",
+      "background": "Arrived from an ad, a search or a recommendation with no prior context. Has no mental model for how this kind of product works, so every piece of vocabulary and every required concept is a chance to lose them.",
+      "goals": ["Work out what this is and whether it's for them", "Try it without committing", "Reach one moment where it obviously works"],
+      "motivation": "Curiosity, plus a vague problem they haven't articulated yet.",
+      "typical_objections": ["I'm not sure this is for me", "What am I supposed to do here?", "Why is it asking me this?"],
+      "preferences": ["An obvious first action", "Examples of what other people made", "Ability to look before signing up"],
+      "vocabulary": ["try it", "sign up", "how it works", "example"],
+      "context_notes": ["No prior mental model of the category", "Judgement forms in the first thirty seconds"],
+      "expected_behavior": [
+        "States their guess about what the product does, and is sometimes wrong",
+        "Struggles with product-specific terminology and says so",
+        "Needs an obvious next step or drifts"
+      ],
+      "traits": {"technical_ability": "medium", "domain_knowledge": "none", "patience": "low", "price_sensitivity": "medium", "risk_tolerance": "medium", "exploration_style": "exploratory"}
+    },
+    {
+      "id": "price_sensitive_user",
+      "label": "Price-sensitive user",
+      "aliases": ["budget conscious", "cheap", "bargain hunter", "cost conscious", "frugal", "value shopper"],
+      "summary": "Cost is the dominant factor in every judgement they make.",
+      "background": "May be technically capable and know the category well, but has a hard ceiling on what they will pay. Evaluates the free tier as if it were the product, and reads pricing pages for the catch rather than the value.",
+      "goals": ["Establish the real cost, including what's excluded", "Get the job done on the cheapest viable tier", "Avoid anything that will escalate later"],
+      "motivation": "Get the outcome without the subscription.",
+      "typical_objections": ["What does the free plan actually not do?", "Is this per user per month?", "What happens when I hit the limit?"],
+      "preferences": ["Pricing visible without a sales call", "Usage limits stated in numbers", "No card for trial"],
+      "vocabulary": ["free tier", "per seat", "annual discount", "limit", "overage"],
+      "context_notes": ["Goes to pricing before anything else", "Has a specific number in mind"],
+      "expected_behavior": [
+        "Navigates to pricing within the first two actions",
+        "Reads the limits column, not the features column",
+        "Reacts strongly and vocally to hidden or unclear costs"
+      ],
+      "traits": {"technical_ability": "medium", "domain_knowledge": "medium", "patience": "medium", "price_sensitivity": "very_high", "risk_tolerance": "low", "exploration_style": "goal_directed"}
+    },
+    {
+      "id": "agency_owner",
+      "label": "Agency owner",
+      "aliases": ["agency", "studio owner", "agency founder", "creative agency", "consultancy"],
+      "summary": "Runs a small team delivering client work and buys tools that must scale across clients.",
+      "background": "Five to thirty people delivering for multiple clients at once. Every tool decision multiplies across projects and has to be explainable to clients. Sensitive to per-seat costs and to anything that makes client handoff harder.",
+      "goals": ["Standardise something across the team", "Look good in front of clients", "Not get locked into something clients can't take over"],
+      "motivation": "Deliver more client work with the same headcount.",
+      "typical_objections": ["Does each client need their own account?", "Can I white-label this?", "What happens when a project ends?"],
+      "preferences": ["Multi-workspace or multi-client support", "Team pricing that isn't purely per seat", "Client-facing output that looks professional"],
+      "vocabulary": ["client", "workspace", "retainer", "white label", "handoff", "billable"],
+      "context_notes": ["Thinking about five projects at once", "Will roll out to the team if it works"],
+      "expected_behavior": [
+        "Immediately asks how multiple clients or projects are separated",
+        "Evaluates the client-facing surface as carefully as the internal one",
+        "Prices it out per project before deciding"
+      ],
+      "traits": {"technical_ability": "medium", "domain_knowledge": "high", "patience": "medium", "price_sensitivity": "high", "risk_tolerance": "medium", "exploration_style": "goal_directed"}
+    },
+    {
+      "id": "recruiter",
+      "label": "Recruiter",
+      "aliases": ["it recruiter", "technical recruiter", "talent acquisition", "headhunter", "sourcer", "hiring manager", "talent partner", "in-house recruiter", "agency recruiter"],
+      "summary": "Fills open roles against a clock, juggling a dozen pipelines at once.",
+      "background": "Works a requisition list that never shrinks. Lives in an ATS, a calendar and LinkedIn, with candidates dropping out at every stage. Measured on time-to-fill and offer-accept rate, and blamed for both. Has been sold a lot of sourcing tools that promised a pipeline and delivered a list of the same people they already knew about.",
+      "goals": ["Get more of the right candidates into the top of the funnel", "Stop losing hours to scheduling and screening", "Show the hiring manager progress this week"],
+      "motivation": "Close the roles before the hiring manager escalates.",
+      "typical_objections": ["Where does the candidate data actually come from?", "Does it plug into our ATS, or is this another tab?", "Is this just a LinkedIn scraper with a markup?", "Will candidates know it's automated?"],
+      "preferences": ["Integrates with the ATS by name", "Shows real candidate examples, not counts", "Per-seat pricing they can get signed off", "Doesn't need engineering to set up"],
+      "vocabulary": ["req", "pipeline", "time-to-fill", "sourcing", "screen", "ATS", "boolean search", "offer accept", "candidate experience"],
+      "context_notes": ["Evaluating between interviews, with a calendar full of them", "Has a specific hard-to-fill role in mind while browsing"],
+      "expected_behavior": [
+        "Looks for the ATS integration list before anything else, and leaves if theirs isn't on it",
+        "Wants to see a real candidate result, not a claim about volume",
+        "Deeply sceptical of sourcing claims and looks for where the data comes from",
+        "Reacts badly to anything that would make candidates feel spammed"
+      ],
+      "traits": {"technical_ability": "medium", "domain_knowledge": "high", "patience": "low", "price_sensitivity": "medium", "risk_tolerance": "medium", "exploration_style": "goal_directed"}
+    },
+    {
+      "id": "operations_manager",
+      "label": "Operations manager",
+      "aliases": ["ops", "operations", "office manager", "process owner", "coo", "ops lead", "business operations"],
+      "summary": "Owns a process and judges tools by whether the team will actually use them.",
+      "background": "Responsible for a workflow that spans several people and at least one spreadsheet. Has watched adoption fail before and is more worried about behaviour change than features. Will map the product onto an existing process in their head as they go.",
+      "goals": ["Replace a spreadsheet or a manual step", "Get the team to adopt it without a fight", "Have visibility over what's happening"],
+      "motivation": "Stop being the person who chases everyone.",
+      "typical_objections": ["Will the team actually use this?", "How much setup is there?", "Can I see who's done what?"],
+      "preferences": ["Bulk import from what they have now", "Permissions and roles", "Reporting or an overview screen", "Notifications that aren't noise"],
+      "vocabulary": ["workflow", "SOP", "approval", "handoff", "reporting", "rollout", "adoption"],
+      "context_notes": ["Mapping the product onto an existing process while browsing", "Thinking about the least technical person on the team"],
+      "expected_behavior": [
+        "Asks how existing data gets in before evaluating features",
+        "Looks for the admin or overview view early",
+        "Discounts anything that would need per-person training"
+      ],
+      "traits": {"technical_ability": "medium", "domain_knowledge": "medium", "patience": "high", "price_sensitivity": "medium", "risk_tolerance": "low", "exploration_style": "methodical"}
+    }
+  ]
+}

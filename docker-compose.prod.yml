@@ -1,0 +1,85 @@
+# Production overlay for the public demo: API + worker. The frontend is on Vercel.
+#
+#   docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
+#
+# Required in .env beside this file (never committed):
+#   POSTGRES_PASSWORD   long random secret
+#   ENCRYPTION_KEY      python -c "from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())"
+#   CORS_ORIGINS        https://mimicuser.ismail-jaija.com
+#
+# Every service sits on one network pinned to 172.30.0.0/24, which
+# deploy/docker-egress-guard.sh restricts to the public internet: the browser
+# the agent drives cannot reach the metadata service, private networks, or the
+# host. Postgres and Redis share that subnet so the worker can still reach them.
+
+x-app: &app
+  build:
+    context: ./backend
+  image: mimicuser-backend
+  restart: unless-stopped
+  environment:
+    DATABASE_URL: postgresql+asyncpg://mimic:${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD}@postgres:5432/mimicuser
+    REDIS_URL: redis://redis:6379/0
+    ENCRYPTION_KEY: ${ENCRYPTION_KEY:?set ENCRYPTION_KEY}
+    CORS_ORIGINS: ${CORS_ORIGINS:?set CORS_ORIGINS}
+    PUBLIC_MODE: "true"
+    STORAGE_ROOT: /data/storage
+    WORKDIR: /data/runs
+  volumes:
+    - research_data:/data
+  networks:
+    - research
+  security_opt:
+    - no-new-privileges:true
+  depends_on:
+    postgres:
+      condition: service_healthy
+    redis:
+      condition: service_healthy
+    migrate:
+      condition: service_completed_successfully
+
+services:
+  postgres:
+    restart: unless-stopped
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD}
+    ports: !reset []
+    networks:
+      - research
+
+  redis:
+    restart: unless-stopped
+    ports: !reset []
+    networks:
+      - research
+
+  migrate:
+    <<: *app
+    restart: "no"
+    command: ["alembic", "upgrade", "head"]
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  api:
+    <<: *app
+    ports:
+      - "127.0.0.1:18000:8000"
+
+  worker:
+    <<: *app
+    command: ["dramatiq", "worker.tasks", "--processes", "1", "--threads", "3"]
+    # Chromium needs a real /dev/shm; the default 64 MB crashes tabs.
+    shm_size: 1gb
+    mem_limit: 5g
+    pids_limit: 1024
+
+networks:
+  research:
+    ipam:
+      config:
+        - subnet: 172.30.0.0/24
+
+volumes:
+  research_data:

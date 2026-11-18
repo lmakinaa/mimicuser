@@ -1,0 +1,22 @@
+refs/
+
+# python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+tsconfig.tsbuildinfo
+
+# runtime artifacts
+storage/
+.runs/
+backend/.env
+
+# node
+node_modules/
+.next/
+next-env.d.ts
+
+.DS_Store
